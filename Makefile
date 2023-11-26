@@ -11,6 +11,7 @@ DOCKER_COMPOSE_FILE ?= docker-compose.yaml
 migrate-up: ## Run migrations UP
 migrate-up: 
 	docker compose -f ${DOCKER_COMPOSE_FILE} --profile tools run --rm migrate up
+	docker compose up
 
 migrate-down: ## Rollback migrations against non test DB
 migrate-down: 

@@ -2,3 +2,4 @@
 tmp
 postgres-data
 dockercompose.txt
+pg_data
