@@ -14,8 +14,8 @@ var (
 	DB_USERNAME string = helpers.GetConfig("POSTGRES_USER")
 	DB_PASSWORD string = helpers.GetConfig("POSTGRES_PASSWORD")
 	DB_NAME     string = helpers.GetConfig("POSTGRES_DB")
-	DB_HOST     string = helpers.GetConfig("DB_HOST")
-	DB_PORT     string = helpers.GetConfig("DB_PORT")
+	DB_HOST     string = helpers.GetConfig("POSTGRES_HOST")
+	DB_PORT     string = helpers.GetConfig("POSTGRES_PORT")
 )
 
 func DBConnection() *gorm.DB {
