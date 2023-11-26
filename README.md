@@ -8,7 +8,7 @@ Final Task  - Project-Based Intern: Fullstack Developer Virtual Internship Exper
 Endpoint ini bertanggung jawab membuat generate token untuk token ke endpoint pengelolaan.
 Method | Path | Keterangan | Auth
 ------------- | ------------- | ------------- | -------------
-***POST*** | *`/api/users/login`* | Men-generate token untuk mengakses endpoint yang berfungsi sebagai pengelolaan. Token akan didapatkan setelah pengguna mengirim request json berupa email dan password yang sudah terdaftar
+***POST*** | *`/api/users/login`* | Untuk masuk ke akun yang telah dibuat .
 ***POST*** | *`/api/users/register`* | Membuat akun user untuk akses endpoint
 
 ## Endpoint User
@@ -38,8 +38,8 @@ Untuk menjalankan proyek ini secara lokal, pastikan Anda telah menginstal GoLang
 2. **Konfigurasi Lingkungan**: Setelah menginstal, pastikan Anda mengatur variabel lingkungan seperti `GOPATH` dan `PATH` sesuai dengan dokumentasi GoLang.
 
 3. **Klon Proyek**: Klon repositori ini ke komputer Anda.
-
-4. **Jalankan**: Buka terminal, masuk ke direktori proyek, dan jalankan aplikasi dengan perintah:
+4. **Buka Postgres** Buat database baru kemudian copy file .env_example
+5. **Jalankan**: Buka terminal, masuk ke direktori proyek, dan jalankan aplikasi dengan perintah:
 
    ```bash
    # 1. Buka terminal.
@@ -49,9 +49,20 @@ Untuk menjalankan proyek ini secara lokal, pastikan Anda telah menginstal GoLang
    # 3. Jalankan aplikasi dengan perintah berikut:
    go run main.go
    ```
+Untuk menjalankan proyek ini menggunakkan docker, pastikan Anda telah menginstal Docker. 
 
-Aplikasi akan berjalan di http://localhost:PORT (sesuaikan dengan konfigurasi Anda).
+**Jalankan**: Buka terminal, masuk ke direktori proyek, dan jalankan aplikasi dengan perintah:
 
+   ```bash
+   # 1. Buka terminal.
+
+   # 2. Pastikan Anda berada dalam direktori proyek.
+
+   # 3. Jalankan aplikasi dengan perintah berikut:
+      - docker compose build
+      - make migrate-up
+   ```
+Aplikasi akan berjalan di http://localhost:3000
 ## Tools 🛠
 
-[![My Skills](https://skillicons.dev/icons?i=go,git,mysql,postman,vscode, docker)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=go,git,postgres,postman,vscode,docker)](https://skillicons.dev)
