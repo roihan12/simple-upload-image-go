@@ -1,6 +1,5 @@
 package helpers
 
-
 type Response struct {
 	Meta Meta        `json:"meta"`
 	Data interface{} `json:"data"`

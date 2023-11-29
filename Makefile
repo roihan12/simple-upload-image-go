@@ -8,6 +8,10 @@ DOCKER_COMPOSE_FILE ?= docker-compose.yaml
 #== DATABASE MIGRATION ==#
 #========================#
 
+build: ## Run migrations UP
+build:
+	docker compose build
+
 migrate-up: ## Run migrations UP
 migrate-up: 
 	docker compose -f ${DOCKER_COMPOSE_FILE} --profile tools run --rm migrate up

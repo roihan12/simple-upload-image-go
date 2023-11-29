@@ -34,6 +34,7 @@ func NewRouter(c *Controllers, a *AuthMiddleware) *gin.Engine {
 	{
 		photoRoute.POST("/", middlewares.AuthMiddleware(a.AuthService, a.UserService), c.PhotoController.Create)
 		photoRoute.GET("/", middlewares.AuthMiddleware(a.AuthService, a.UserService), c.PhotoController.GetPhoto)
+		photoRoute.GET("/:photoId", middlewares.AuthMiddleware(a.AuthService, a.UserService), c.PhotoController.GetPhotoByID)
 		photoRoute.PUT("/:photoId", middlewares.AuthMiddleware(a.AuthService, a.UserService), c.PhotoController.Edit)
 		photoRoute.DELETE("/:photoId", middlewares.AuthMiddleware(a.AuthService, a.UserService), c.PhotoController.Delete)
 	}

@@ -10,9 +10,9 @@ import (
 
 type PhotoService interface {
 	Create(inputID int, inputData request.PhotoInput) (models.Photo, error)
-	GetByUserID(userID int) (models.Photo, error)
+	GetByUserID(userID int) ([]models.Photo, error)
 	GetByID(ID int) (models.Photo, error)
-	Update(inputID int, inputData request.PhotoUpdate) (models.Photo, error)
+	Update(PhotoID int, inputData request.PhotoUpdate) (models.Photo, error)
 	Delete(ID int) error
 }
 
@@ -39,7 +39,7 @@ func (s *PhotoServiceImpl) Create(inputID int, inputData request.PhotoInput) (mo
 	return created, nil
 }
 
-func (s *PhotoServiceImpl) GetByUserID(userID int) (models.Photo, error) {
+func (s *PhotoServiceImpl) GetByUserID(userID int) ([]models.Photo, error) {
 	photo, err := s.photoRepository.FindByUserID(userID)
 	if err != nil {
 		return photo, err
@@ -59,9 +59,9 @@ func (s *PhotoServiceImpl) GetByID(ID int) (models.Photo, error) {
 	return photo, nil
 }
 
-func (s *PhotoServiceImpl) Update(inputID int, inputData request.PhotoUpdate) (models.Photo, error) {
+func (s *PhotoServiceImpl) Update(photoID int, inputData request.PhotoUpdate) (models.Photo, error) {
 
-	photo, err := s.photoRepository.FindByUserID(inputID)
+	photo, err := s.photoRepository.FindByID(photoID)
 	if err != nil {
 		return photo, err
 	}
