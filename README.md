@@ -1,33 +1,35 @@
 # task-5-pbi-btpns-roihan-sori-nasution
-Final Task  - Project-Based Intern: Fullstack Developer Virtual Internship Experience BTPN Syariah
 
+Final Task - Project-Based Intern: Fullstack Developer Virtual Internship Experience BTPN Syariah
 
 # Endpoint API
 
 ## Endpoint Auth
-Endpoint ini bertanggung jawab membuat generate token untuk token ke endpoint pengelolaan.
+
+Endpoint ini bertanggung jawab untuk login dan register.
 Method | Path | Keterangan | Auth
 ------------- | ------------- | ------------- | -------------
-***POST*** | *`/api/users/login`* | Untuk masuk ke akun yang telah dibuat .
-***POST*** | *`/api/users/register`* | Membuat akun user untuk akses endpoint
+**_POST_** | _`/api/v1/users/login`_ | Untuk masuk atau login ke akun yang telah dibuat .
+**_POST_** | _`/api/v1/users/register`_ | Membuat akun user.
 
 ## Endpoint User
-Endpoint ini bertanggung jawab mengelola user.
+
+Endpoint ini bertanggung jawab update dan delete user.
 Method | Path | Keterangan | Auth
 ------------- | ------------- | ------------- | -------------
-***GET*** | *`/api/users/:id`* | Mengakses data pengguna berdasakan id pengguna | token
-***PUT*** | *`/api/users/:id`* | Mengubah data pengguna berdasakan id pengguna | token
-***DELETE*** | *`/api/users/:id`* | Menghapus data pengguna berdasakan id pengguna | token
+**_PUT_** | _`/api/v1/users/:id`_ | Mengubah data pengguna berdasakan id pengguna | token
+**_DELETE_** | _`/api/v1/users/:id`_ | Menghapus data pengguna berdasakan id pengguna | token
 
 ## Endpoint Photo
+
 Endpoint ini bertanggung jawab mengelola photo.
 Method | Path | Keterangan | Auth
 ------------- | ------------- | ------------- | -------------
-***GET*** | *`/api/photos`* | Mengakses data foto | token
-***GET*** | *`/api/photos/:id`* | Mengakses data pengguna berdasakan id foto | token
-***POST*** | *`/api/photos`* | Membuat data foto baru | token
-***PUT*** | *`/api/photos/:id`* | Mengubah data foto berdasakan id foto | token
-***DELETE*** | *`/api/photos/:id`* | Menghapus data foto berdasakan id foto | token
+**_GET_** | _`/api/photos`_ | Mengakses data foto berdasarkan user id | token
+**_GET_** | _`/api/photos/:id`_ | Mengakses data pengguna berdasakan id foto | token
+**_POST_** | _`/api/photos`_ | Membuat data foto baru | token
+**_PUT_** | _`/api/photos/:id`_ | Mengubah data foto berdasakan id foto | token
+**_DELETE_** | _`/api/photos/:id`_ | Menghapus data foto berdasakan id foto | token
 
 ## Instalasi
 
@@ -49,20 +51,27 @@ Untuk menjalankan proyek ini secara lokal, pastikan Anda telah menginstal GoLang
    # 3. Jalankan aplikasi dengan perintah berikut:
    go run main.go
    ```
-Untuk menjalankan proyek ini menggunakkan docker, pastikan Anda telah menginstal Docker. 
+
+   Untuk menjalankan proyek ini menggunakkan docker, pastikan Anda telah menginstal Docker.
 
 **Jalankan**: Buka terminal, masuk ke direktori proyek, dan jalankan aplikasi dengan perintah:
 
-   ```bash
-   # 1. Buka terminal.
+```bash
+# 1. Buka terminal.
 
-   # 2. Pastikan Anda berada dalam direktori proyek.
+# 2. Pastikan Anda berada dalam direktori proyek.
 
-   # 3. Jalankan aplikasi dengan perintah berikut:
-      - docker compose build
-      - make migrate-up
-   ```
+# 4. Jika menggunakan docker. Jalankan aplikasi dengan perintah berikut:
+   - docker compose build
+	- docker compose -f docker-compose.yaml --profile tools run --rm migrate up
+	- docker compose up
+# 3. Jika anda bisa menggunakan makefile. Jalankan aplikasi dengan perintah berikut:
+   - make build
+   - make migrate-up
+```
+
 Aplikasi akan berjalan di http://localhost:3000
+
 ## Tools 🛠
 
 [![My Skills](https://skillicons.dev/icons?i=go,git,postgres,postman,vscode,docker)](https://skillicons.dev)
