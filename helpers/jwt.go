@@ -14,7 +14,7 @@ type JwtService interface {
 type JwtServiceImpl struct {
 }
 
-var SECRET_KEY = []byte("ITSASECRET")
+var SECRET_KEY = []byte(GetConfig("SECRET_KEY"))
 
 func (a *JwtServiceImpl) GenerateToken(userID int) (string, error) {
 	claim := jwt.MapClaims{}
