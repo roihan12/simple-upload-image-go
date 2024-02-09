@@ -1,6 +1,6 @@
-# task-5-pbi-btpns-roihan-sori-nasution
+# simple-upload-image-go
 
-Final Task - Project-Based Intern: Fullstack Developer Virtual Internship Experience BTPN Syariah
+
 
 # Endpoint API
 
